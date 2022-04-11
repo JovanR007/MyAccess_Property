@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "myAccessProperty",
-    publicPath: "auto"
+    publicPath: "http://localhost:3004/",
+    scriptType: 'text/javascript'
   },
   optimization: {
     runtimeChunk: false
@@ -27,25 +28,25 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
         library: { type: "module" },
-
+        name: "myAccessProperty",
+        filename: "remoteEntry.js",
         // For remotes (please adjust)
         // name: "myAccessProperty",
         // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },        
+        exposes: {
+            './MyAccessPropertyModule': [
+              "./src/styles.css",
+              "./src/app/MyAccess-Property/MyAccess-Property.module.ts"
+            ]
+        },        
         
-        // For hosts (please adjust)
-        // remotes: {
-        //     "mfe1": "http://localhost:3000/remoteEntry.js",
-
-        // },
+      
 
         shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          "@angular/core": { singleton: true, strictVersion: false, requiredVersion: 'auto' }, 
+          "@angular/common": { singleton: true, strictVersion: false, requiredVersion: 'auto' }, 
+          "@angular/common/http": { singleton: true, strictVersion: false, requiredVersion: 'auto' }, 
+          "@angular/router": { singleton: true, strictVersion: false, requiredVersion: 'auto' },
 
           ...sharedMappings.getDescriptors()
         })
