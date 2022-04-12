@@ -38,7 +38,7 @@
                 <tbody>
                     <tr *ngFor="let propertyinfo of propertyInfo">
                         <td class="d-flex flex-lg-row">
-                            <img src="./assets/icon-building-image 1.png" alt="" class="img-fluid img-property-icon">
+                            <img src="{{imageService.getImageBaseUrl()+'img/icon-building-image 1.png'}}" alt="" class="img-fluid img-property-icon">
                             <div>
                                 <p class="fw-bold">{{propertyinfo?.address}}</p>
                                 <span>{{propertyinfo?.address}}</span>

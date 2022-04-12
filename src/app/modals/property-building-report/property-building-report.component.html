@@ -5,7 +5,7 @@
 </div> -->
 <app-property-navbar></app-property-navbar>
 
-    <img src="./assets/back-icon 1.png" (click)="routeProp()"style="margin-left:1550px; width:37px; height:24; position:absolute; top:215px; left:10px;"><br>
+    <img src="{{imageService.getImageBaseUrl()+'img/back-icon 1.png'}}" (click)="routeProp()"style="margin-left:1550px; width:37px; height:24; position:absolute; top:215px; left:10px;"><br>
             <p  (click)="routeProp()"style="position: absolute;
             width: 195px;
             height: 14px;
@@ -22,7 +22,7 @@ color: #000000;">
             </p>
            
             
-<button type="button" (click)="open(content)" class="btn btn-primary download-icon" style="margin-left:1550px; width:107.85px; height:40px; position:absolute; ">  <img src="./assets/download.png" alt=""></button>
+<button type="button" (click)="open(content)" class="btn btn-primary download-icon" style="margin-left:1550px; width:107.85px; height:40px; position:absolute; ">  <img src="{{imageService.getImageBaseUrl()+'img/download.png'}}" alt=""></button>
 <button type="button" (click)="open(content)" class="btn btn-primary download-icon" style="margin-left:1700px; width:107.85px; height:40px; position:absolute; ">  Update</button>
 <div class="content" role="main" style="
 margin-left:90px; margin-top: 250px; margin-top:150px;">

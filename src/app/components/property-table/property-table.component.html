@@ -25,7 +25,7 @@
         <tbody>
             <tr *ngFor="let propertyinfo of propertyInfo">
                 <td class="d-flex flex-lg-row flex-column">
-                    <img src="./assets/icon-building-image 1.png" alt="" class="img-fluid img-property-icon">
+                    <img src="{{imageService.getImageBaseUrl()+ 'img/icon-building-image 1.png' }}" alt="" class="img-fluid img-property-icon">
                     <div>
                         <p class="fw-bold">{{propertyinfo?.address}}</p>
                         <span>{{propertyinfo?.address}}</span>
@@ -46,7 +46,7 @@
                     bottom: 10px;"(click)="routeReport()"></i>   
                                                                                 
                     
-                   <img src="./assets/table-com-logo.png" style="width:21px; height:29.36px">
+                   <img src="{{imageService.getImageBaseUrl()+'img/table-com-logo.png'}}" style="width:21px; height:29.36px">
                     <!-- <div [ngClass]="tenantshow ? 'show' : 'hide'"> -->
                     <app-tenant-log [address]="propertyinfo?.address" [city]="propertyinfo?.city" [zipcode]="propertyinfo?.zipcode"></app-tenant-log>
                 <!-- </div> -->

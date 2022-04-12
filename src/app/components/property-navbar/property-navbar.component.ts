@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ImageService } from 'src/app/_services/image.service';
 @Component({
   selector: 'app-property-navbar',
   templateUrl: './property-navbar.component.html',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class PropertyNavbarComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, public imageService: ImageService) { }
 
   ngOnInit(): void {
   }

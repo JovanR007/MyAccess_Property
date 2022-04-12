@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
+import { ImageService } from 'src/app/_services/image.service';
 @Component({
   selector: 'app-download',
   templateUrl: './download.component.html',
@@ -8,7 +9,7 @@ import html2canvas from 'html2canvas';
 })
 export class DownloadComponent implements OnInit {
 
-  constructor() { }
+  constructor(public imageService:ImageService) { }
 
   ngOnInit(): void {
   }

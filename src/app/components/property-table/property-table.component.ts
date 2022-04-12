@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PropertyService } from 'src/app/_services/property.service';
+import { PropertyService} from 'src/app/_services/property.service';
 import { Property } from 'src/app/_models/property';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { Route, Router } from '@angular/router';
+import { ImageService } from 'src/app/_services/image.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class PropertyTableComponent implements OnInit {
   propertyInfo!: Property[];
   combinedadd!: string;
   tenantshow: boolean= false;
-  constructor(private propertyService:PropertyService , private router:Router) { } 
+  constructor(private propertyService:PropertyService , private router:Router, public imageService:ImageService) { } 
 
   ngOnInit(): void {
     this.getPropertyToList();

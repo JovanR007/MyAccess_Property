@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {Loader} from '@googlemaps/js-api-loader';
 import { PropertyService } from 'src/app/_services/property.service';
 import { Property } from 'src/app/_models/property';
+import { ImageService } from 'src/app/_services/image.service';
 @Component({
   selector: 'app-property-map',
   templateUrl: './property-map.component.html',
@@ -9,7 +10,7 @@ import { Property } from 'src/app/_models/property';
 })
 export class PropertyMapComponent implements OnInit {
   propertyInfo!: Property[];
-  constructor(private propertyService:PropertyService) { }
+  constructor(private propertyService:PropertyService, public imageService:ImageService) { }
 
   ngOnInit(): void {
     let loader= new Loader({
